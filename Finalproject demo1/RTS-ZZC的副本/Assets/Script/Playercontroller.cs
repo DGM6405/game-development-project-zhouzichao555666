@@ -44,8 +44,12 @@ public class Playercontroller : MonoBehaviour {
         {
             //if (!isSelected) {
 
-                reUnities();
 
+			if((GetPointUnderCursor2().collider.gameObject.tag!="Unities")&&(GetPointUnderCursor2().collider.gameObject.tag!="isSelectedUnity")){
+
+				print (GetPointUnderCursor2().collider.gameObject.tag);
+                reUnities();
+			}
            // }
 
 
@@ -65,6 +69,13 @@ public class Playercontroller : MonoBehaviour {
 
 
     }
+
+
+	void LateUpdate(){}
+
+
+
+
     private Vector3 GetPointUnderCursor() {
 
         Vector2 screenPosition = Input.mousePosition;
@@ -158,6 +169,37 @@ public class Playercontroller : MonoBehaviour {
         }
 
     }
+
+
+
+
+	private RaycastHit GetPointUnderCursor2()
+	{
+
+
+
+
+
+		Vector2 screenPosition = Input.mousePosition;
+
+
+
+		Ray ray = cam.ScreenPointToRay(screenPosition);
+
+
+		RaycastHit hitPosition;
+
+		Physics.Raycast(cam.transform.position, ray.direction, out hitPosition, 100);
+
+		return hitPosition;
+
+
+
+
+	}
+
+
+
 
    // private void isArrows() {
    

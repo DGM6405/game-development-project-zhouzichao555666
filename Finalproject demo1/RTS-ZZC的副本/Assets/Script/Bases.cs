@@ -43,7 +43,7 @@ public class Bases : MonoBehaviour {
 		}
 		if (buildingHealth<=0) {
 
-			SceneManager.GetSceneAt (1);
+			SceneManager.LoadScene(2);
 
 
 		}

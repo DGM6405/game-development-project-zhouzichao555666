@@ -41,7 +41,7 @@ public class unityAA : MonoBehaviour {
             if (timer>=3.0f) {
 
                 
-                Health -= 10;
+                Health -= 20;
                 timer = 0.0f;
 
             }

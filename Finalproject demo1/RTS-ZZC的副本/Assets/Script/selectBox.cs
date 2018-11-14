@@ -25,6 +25,8 @@ public class selectBox : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+
+
         if (Input.GetMouseButtonDown(0))
         {
             isSelecting = true;
@@ -146,10 +148,7 @@ public static Bounds GetViewportBounds(Camera camera, Vector3 screenPosition1, V
         var viewportBounds =
             GetViewportBounds(camera, mousePosition1, Input.mousePosition);
 
-        Debug.Log(
-            camera.WorldToViewportPoint(gameObject.transform.position));
-        Debug.Log(
-            viewportBounds);
+       
 
 
 

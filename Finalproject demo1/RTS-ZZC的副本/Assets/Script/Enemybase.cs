@@ -44,7 +44,7 @@ public class Enemybase : MonoBehaviour {
         }
         if (buildingHealth<=0) {
 
-			SceneManager.GetSceneAt (2);
+			SceneManager.LoadScene(1);
 
 
         }
