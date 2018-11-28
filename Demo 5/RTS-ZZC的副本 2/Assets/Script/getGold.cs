@@ -10,7 +10,7 @@ public class getGold : MonoBehaviour {
  
     private float timer = 0f;
 
-    public int getMoneyS = 30;
+    public int getMoneyS = 0;
 
 
 	// Use this for initialization
@@ -44,12 +44,12 @@ public class getGold : MonoBehaviour {
 
     }
 
-    private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
     {
 
         if (other.tag=="Unities"||other.tag=="isSelectedUnity") {
 
-           
+			getMoneyS += 30;
 
             isgetGold = true;
 
@@ -64,9 +64,19 @@ public class getGold : MonoBehaviour {
     {
         if (other.tag=="Unities" || other.tag == "isSelectedUnity") {
 
+			getMoneyS -= 30;
+
+			if(getMoneyS<=0){
             isgetGold = false;
+			}
 
         }
+
+
+
+
+
+
     }
 
 

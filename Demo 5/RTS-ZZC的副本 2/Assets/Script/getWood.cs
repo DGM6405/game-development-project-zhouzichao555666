@@ -10,7 +10,7 @@ public class getWood : MonoBehaviour {
    
     private float timer = 0f;
 
-    public int getWoodS = 20;
+    public int getWoodS = 0;
     
     // Use this for initialization
     void Start()
@@ -56,7 +56,7 @@ public class getWood : MonoBehaviour {
         if (other.tag == "Unities" || other.tag == "isSelectedUnity")
         {
 
-
+			getWoodS += 30;
 
             isgetWood = true;
 
@@ -71,8 +71,11 @@ public class getWood : MonoBehaviour {
     {
         if (other.tag == "Unities" || other.tag == "isSelectedUnity")
         {
+			getWoodS -= 30;
 
-            isgetWood = false;
+			if (getWoodS == 0) {
+				isgetWood = false;
+			}
 
         }
     }

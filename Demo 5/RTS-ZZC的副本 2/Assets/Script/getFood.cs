@@ -10,7 +10,7 @@ public class getFood : MonoBehaviour {
     private float timer = 0f;
 
 
-    public int getFoodS = 10;
+    public int getFoodS = 0;
 
     // Use this for initialization
     void Start()
@@ -53,7 +53,7 @@ public class getFood : MonoBehaviour {
         if (other.tag == "Unities" || other.tag == "isSelectedUnity")
         {
 
-
+			getFoodS += 20;
 
             isgetFood = true;
 
@@ -68,9 +68,10 @@ public class getFood : MonoBehaviour {
     {
         if (other.tag == "Unities" || other.tag == "isSelectedUnity")
         {
-
-            isgetFood = false;
-
+			getFoodS -= 20;
+			if (getFoodS <= 0) {
+				isgetFood = false;
+			}
         }
     }
 
